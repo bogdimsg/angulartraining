@@ -1,0 +1,25 @@
+<div class="container">
+    <h1 class="part">Products</h1>
+    <div>
+        <button class="part" style="background-color: dodgerblue;color: white">CART</button>
+        <button class="part" style="background-color: dodgerblue;color: white">ADD</button>
+    </div>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th class="row-width"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productList">
+            <td>{{ product.category }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }} RON</td>
+            <td class="row-width"><button class="nav-button">></button></td>
+        </tr>
+    </tbody>
+</table>

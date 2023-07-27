@@ -1,0 +1,40 @@
+table {
+    border-collapse: collapse;
+    width: 90%;
+    border-style: groove;
+
+    td, th {
+        border: 2px solid #6c6c6c;
+        padding: 0.7rem;
+    }
+
+    tbody tr:nth-child(odd) {
+        background: #eee;
+    }
+}
+
+// tr :last-child {
+//     width: 3%;
+// }
+
+.row-width {
+    width: 3%;
+}
+
+th {
+    font-size: large;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    .part {
+        button {
+            float: right;
+        }
+    }
+}
+
+.nav-button {
+    width: 2rem;
+}
