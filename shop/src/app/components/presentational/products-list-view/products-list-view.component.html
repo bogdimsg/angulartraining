@@ -1,8 +1,7 @@
 <div class="container">
-    <h1 class="part">Products</h1>
-    <div>
-        <button class="part" style="background-color: dodgerblue;color: white">CART</button>
-        <button class="part" style="background-color: dodgerblue;color: white">ADD</button>
+    <h1>Products</h1>
+    <div class="part">
+        <button style="background-color: dodgerblue;color: white" routerLink="shopping-cart">CART</button>
     </div>
 </div>
 <table>
@@ -12,6 +11,7 @@
             <th>Product Name</th>
             <th>Price</th>
             <th class="row-width"></th>
+            <th class="row-width"></th>
         </tr>
     </thead>
     <tbody>
@@ -19,7 +19,8 @@
             <td>{{ product.category }}</td>
             <td>{{ product.name }}</td>
             <td>{{ product.price }} RON</td>
-            <td class="row-width"><button class="nav-button">></button></td>
+            <td class="row-width"><button class="nav-button" routerLink="product-details/product0">></button></td>
+            <td class="row-width"><button class="nav-button" onclick="addItemToCart(product)">+</button></td>
         </tr>
     </tbody>
 </table>

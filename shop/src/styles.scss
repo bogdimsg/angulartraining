@@ -3,6 +3,13 @@ body {
     padding: 0.2rem 1em; // vertical, horizontal
 }
 
+.navbar-container {
+    background-color: darkgrey;
+    border-bottom: 0.3rem solid black;
+    padding: 0rem 0.1rem; // vertical, horizontal
+    margin: 0.5rem 0.1rem; // vertical, horizontal
+}
+
 h1 {
     padding: 0.3rem 0.7rem; // vertical, horizontal
 }
@@ -10,7 +17,7 @@ h1 {
 button {
     font-size: larger;
     border-radius: 0.4rem;
-    padding: 0.2rem 0.4rem; // vertical, horizontal
+    padding: 0.5rem 0.9rem; // vertical, horizontal
     margin: 2px 4px; // vertical, horizontal
     cursor: pointer;
 }

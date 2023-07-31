@@ -1,11 +1,23 @@
 <div *ngIf="product">
     <div class="top">
         <h1>Product: {{ product.name }}</h1>
-        <button style="background-color: dodgerblue;color:white">EDIT</button>
-        <button style="background-color: tomato;color:black">DELETE</button>
+        <div>
+            <button style="background-color: tomato;color:black">DELETE</button>
+            <button style="background-color: dodgerblue;color:white">EDIT</button>
+        </div>
     </div>
-    <p>Name: {{ product.name }}</p>
-    <p>Category: {{ product.category }}</p>
-    <p>Price: {{ product.price }} RON</p>
-    <p>Description: {{ product.description }}</p>
+    <div class="details">
+        <div class="sorters">
+            <p>Name</p>
+            <p>Category</p>
+            <p>Price</p>
+            <p>Description</p>
+        </div>
+        <div class="descriptors">
+            <p>{{ product.name }}</p>
+            <p>{{ product.category }}</p>
+            <p>{{ product.price }} RON</p>
+            <p>{{ product.description }}</p>
+        </div>
+    </div>
 </div>

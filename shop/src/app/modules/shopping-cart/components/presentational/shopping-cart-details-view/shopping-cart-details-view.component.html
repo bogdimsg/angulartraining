@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>Shopping Cart</h1>
+    <div class="part">
+        <button style="background-color: dodgerblue;color: white">CHECKOUT</button>
+    </div>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th class="row-width"></th>
+        </tr>
+    </thead>
+    <tbody *ngIf="products">
+        <tr *ngFor="let product of products">
+            <td>{{ product.category }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }} RON</td>
+            <td>{{ product.quantity }}</td>
+            <td class="row-width"><app-icon-button></app-icon-button></td>
+        </tr>
+    </tbody>
+</table>

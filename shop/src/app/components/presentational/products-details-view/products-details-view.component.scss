@@ -1,7 +1,21 @@
 .top {
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
     button {
-        display: inline;
         float: right;
+    }
+}
+
+.details {
+    font-size: large;
+    .sorters {
+        display: inline-block;
+        color: gray;
+        text-align: end;
+        padding: 0.1rem 1rem; // vertical, horizontal
+    }
+    .descriptors {
+        display: inline-block;
+        padding: 0.1rem 1rem; // vertical, horizontal
     }
 }
