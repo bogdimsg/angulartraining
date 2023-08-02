@@ -8,7 +8,7 @@ import { Title } from '@angular/platform-browser';
 const routes: Routes = [
   { path: '', component: ProductsListComponent },
   { path: 'product-list', component: ProductsListComponent, title: 'Products' },
-  { path: 'product-details/product0', component: ProductsDetailsComponent, title: 'Product Details' },
+  { path: 'product-details/:id', component: ProductsDetailsComponent, title: 'Product Details' },
   { path: 'shopping-cart', component: ShoppingCartDetailsComponent, title: 'Cart' }
 ];
 

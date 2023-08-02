@@ -15,12 +15,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of productList">
-            <td>{{ product.category }}</td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.price }} RON</td>
-            <td class="row-width"><button class="nav-button" routerLink="product-details/product0">></button></td>
-            <td class="row-width"><button class="nav-button" onclick="addItemToCart(product)">+</button></td>
+        <tr *ngFor="let product of productList | async">
+            <td>{{ product.categoryName }}</td>
+            <td>{{ product.productName }}</td>
+            <td>{{ product.productPrice }} RON</td>
+            <td class="row-width"><button class="nav-button" routerLink="product-details/{{ product.productID }}">></button></td>
+            <td class="row-width"><button class="nav-button" (click)="addItemToCart(product)">+</button></td>
         </tr>
     </tbody>
 </table>

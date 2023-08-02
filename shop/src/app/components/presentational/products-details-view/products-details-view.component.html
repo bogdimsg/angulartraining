@@ -1,6 +1,6 @@
-<div *ngIf="product">
-    <div class="top">
-        <h1>Product: {{ product.name }}</h1>
+<div *ngIf="product | async as product">
+    <div class="os-top-alignment">
+        <h1>Product: {{ product.productName }}</h1>
         <div>
             <button style="background-color: tomato;color:black">DELETE</button>
             <button style="background-color: dodgerblue;color:white">EDIT</button>
@@ -14,10 +14,10 @@
             <p>Description</p>
         </div>
         <div class="descriptors">
-            <p>{{ product.name }}</p>
-            <p>{{ product.category }}</p>
-            <p>{{ product.price }} RON</p>
-            <p>{{ product.description }}</p>
+            <p>{{ product.productName }}</p>
+            <p>{{ product.categoryName }}</p>
+            <p>{{ product.productPrice }} RON</p>
+            <p>{{ product.productDescription }}</p>
         </div>
     </div>
 </div>

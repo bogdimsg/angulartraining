@@ -8,6 +8,7 @@ import { ProductsDetailsComponent } from './components/containers/products-detai
 import { ProductsListViewComponent } from './components/presentational/products-list-view/products-list-view.component';
 import { ProductsDetailsViewComponent } from './components/presentational/products-details-view/products-details-view.component';
 import { ShoppingCartModule } from './modules/shopping-cart/shopping-cart.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ShoppingCartModule } from './modules/shopping-cart/shopping-cart.module
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ShoppingCartModule
+    ShoppingCartModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
