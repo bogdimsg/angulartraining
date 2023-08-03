@@ -2,7 +2,7 @@
     <div class="os-top-alignment">
         <h1>Product: {{ product.productName }}</h1>
         <div>
-            <button style="background-color: tomato;color:black">DELETE</button>
+            <button style="background-color: tomato;color:black" (click)="handleDeletionFromInventory(product)">DELETE</button>
             <button style="background-color: dodgerblue;color:white">EDIT</button>
         </div>
     </div>

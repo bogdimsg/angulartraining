@@ -12,12 +12,12 @@ export class ShoppingCartDetailsComponent {
 
   constructor(private storage: StorageService) {}
 
-  handleDelete(productID: string): void{
+  handleDelete(productID: string): void {
     this.storage.deleteProductFromCartByID(productID);
     this.update();
   }
 
-  update(): void{
+  update(): void {
     this.products = this.storage.getProductsCart();
   }
 }

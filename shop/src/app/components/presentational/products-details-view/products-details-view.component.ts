@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/modules/shared/types/product.types';
 
@@ -9,4 +9,9 @@ import { Product } from 'src/app/modules/shared/types/product.types';
 })
 export class ProductsDetailsViewComponent {
   @Input() product: Observable<Product> | undefined;
+  @Output() onDeletion = new EventEmitter();
+
+  handleDeletionFromInventory(product: Product): void {
+    this.onDeletion.emit(product);
+  }
 }

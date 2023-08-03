@@ -123,4 +123,9 @@ export class StorageService implements OnInit {
     }
     return '0';
   }
+
+  deleteFromInventory(product: Product): void {
+    let del = this.http.delete(environment.apiUrl + '/products/' + product.productID).subscribe();
+    // add a del unsubscribe, but where
+  }
 }

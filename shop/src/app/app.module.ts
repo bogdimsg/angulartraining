@@ -9,6 +9,9 @@ import { ProductsListViewComponent } from './components/presentational/products-
 import { ProductsDetailsViewComponent } from './components/presentational/products-details-view/products-details-view.component';
 import { ShoppingCartModule } from './modules/shopping-cart/shopping-cart.module';
 import { HttpClientModule } from '@angular/common/http';
+import { BadRouteComponent } from './components/bad-route/bad-route.component';
+import { AddProductComponent } from './components/containers/add-product/add-product.component';
+import { AddProductViewComponent } from './components/presentational/add-product-view/add-product-view.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
     ProductsListComponent,
     ProductsDetailsComponent,
     ProductsListViewComponent,
-    ProductsDetailsViewComponent
+    ProductsDetailsViewComponent,
+    BadRouteComponent,
+    AddProductComponent,
+    AddProductViewComponent
   ],
   imports: [
     BrowserModule,

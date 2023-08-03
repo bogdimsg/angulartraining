@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/modules/shared/types/product.types';
 import { StorageService } from 'src/app/services/storage.service';
@@ -11,7 +11,7 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 
 export class ProductsDetailsComponent {
-  constructor (private route: ActivatedRoute, private storage: StorageService) {}
+  constructor (private route: ActivatedRoute, private storage: StorageService, private router: Router) {}
   product!: Observable<Product>;
   
   ngOnInit() {
@@ -21,5 +21,10 @@ export class ProductsDetailsComponent {
   getProduct(): Observable<Product> {
     let id = this.route.snapshot.paramMap.get("id");
     return this.storage.getProductByID(id);
+  }
+
+  handleDeletionFromInventory(product: Product): void {
+    this.storage.deleteFromInventory(product);
+    this.router.navigate(['/']);
   }
 }
