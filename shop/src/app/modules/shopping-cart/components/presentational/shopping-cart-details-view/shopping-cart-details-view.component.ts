@@ -21,7 +21,9 @@ export class ShoppingCartDetailsViewComponent {
     return this.storage.getQuantity(product);
   }
 
-  createOrder(products: Product[]): void {
-    ;
+  createOrder(): void {
+    this.storage.createOrder();
+    // update
+    this.products = this.storage.getProductsCart();
   }
 }

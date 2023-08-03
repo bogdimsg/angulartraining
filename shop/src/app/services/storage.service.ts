@@ -131,8 +131,33 @@ export class StorageService implements OnInit {
   }
 
   updateProductFromDB(product: Product): void {
-    let del = this.http.put(environment.apiUrl + '/products/' + product.productID, product).subscribe();
+    let upd = this.http.put(environment.apiUrl + '/products/' + product.productID, product).subscribe();
     this.products.splice(this.products.findIndex(x => x.productID == product.productID));
     this.products.push(product);
+  }
+
+  createOrder(): void {
+    let prods: StorageType[] = JSON.parse(localStorage.getItem(this.shoppingCartKey)!);
+    const orderItems = new Map<string, string>();
+
+    for (let i = 0; i < prods.length; i++) {
+      orderItems.set(
+        prods[i].id,
+        prods[i].quantity
+      );
+    }
+
+    let cre = this.http.post(environment.apiUrl + '/orders', {
+      "customerId":"fe2e3cb7-6877-4b2c-b098-3506cc388268",
+      "productToQuantityMap": orderItems,
+      "createdAt" : "2023-07-24 09:23:08",
+      "country" : "Romania",
+      "city" : "Timisoara",
+      "county" : "Timis",
+      "street" : "Aleea Sudentilor"
+    }).subscribe();
+    alert("Order created!");
+    // update localStorage and page
+    localStorage.setItem(this.shoppingCartKey, '[]');
   }
 }
