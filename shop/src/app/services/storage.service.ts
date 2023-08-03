@@ -11,6 +11,7 @@ import { StorageType } from '../modules/shared/types/storage.types';
 export class StorageService implements OnInit {
   shoppingCartKey: string = 'shoppingCart';
   products!: Product[]; // these are the products gotten from the db
+  selectedProduct!: Product;
   
   constructor (private http: HttpClient) {}
   
@@ -35,7 +36,7 @@ export class StorageService implements OnInit {
   getProductByID(productID: string | null) : Observable<Product> {
     // get the product by its id, from the db -- refactor later to get the product from products
     let product = this.http.get<Product>(environment.apiUrl + `/products/${productID}`);
-    return product;
+    return product.pipe(tap(product => this.selectedProduct = product));
   }
   
   getProductsCart(): Product[] {
@@ -127,5 +128,11 @@ export class StorageService implements OnInit {
   deleteFromInventory(product: Product): void {
     let del = this.http.delete(environment.apiUrl + '/products/' + product.productID).subscribe();
     // add a del unsubscribe, but where
+  }
+
+  updateProductFromDB(product: Product): void {
+    let del = this.http.put(environment.apiUrl + '/products/' + product.productID, product).subscribe();
+    this.products.splice(this.products.findIndex(x => x.productID == product.productID));
+    this.products.push(product);
   }
 }

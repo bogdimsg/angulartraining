@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BadRouteComponent } from './components/bad-route/bad-route.component';
 import { AddProductComponent } from './components/containers/add-product/add-product.component';
 import { AddProductViewComponent } from './components/presentational/add-product-view/add-product-view.component';
+import { EditProductComponent } from './components/containers/edit-product/edit-product.component';
+import { EditProductViewComponent } from './components/presentational/edit-product-view/edit-product-view.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,13 +25,16 @@ import { AddProductViewComponent } from './components/presentational/add-product
     ProductsDetailsViewComponent,
     BadRouteComponent,
     AddProductComponent,
-    AddProductViewComponent
+    AddProductViewComponent,
+    EditProductComponent,
+    EditProductViewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ShoppingCartModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,8 +11,9 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 
 export class ProductsDetailsComponent {
-  constructor (private route: ActivatedRoute, private storage: StorageService, private router: Router) {}
   product!: Observable<Product>;
+  
+  constructor (private route: ActivatedRoute, private storage: StorageService, private router: Router) {}
   
   ngOnInit() {
     return this.product = this.getProduct();

@@ -1,0 +1,16 @@
+.form-container {
+    font-size: large;
+    .labels {
+        display: inline-block;
+        text-align: end;
+        padding: 0.1rem 1rem; // vertical, horizontal
+    }
+    .inputs {
+        display: inline-block;
+        padding: 0.1rem 1rem; // vertical, horizontal
+    }
+}
+
+button {
+    width: 7rem; // vertical, horizontal
+}
