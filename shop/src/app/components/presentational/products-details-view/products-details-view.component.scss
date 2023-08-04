@@ -1,0 +1,21 @@
+.os-top-alignment {
+    display: flex;
+    justify-content: space-between;
+    button {
+        float: right;
+    }
+}
+
+.details {
+    font-size: large;
+    .sorters {
+        display: inline-block;
+        color: gray;
+        text-align: end;
+        padding: 0.1rem 1rem; // vertical, horizontal
+    }
+    .descriptors {
+        display: inline-block;
+        padding: 0.1rem 1rem; // vertical, horizontal
+    }
+}

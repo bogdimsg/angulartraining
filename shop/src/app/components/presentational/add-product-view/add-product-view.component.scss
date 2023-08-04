@@ -1,0 +1,34 @@
+.all-container {
+    margin-left: 1rem; 
+    button {
+        margin-left: 8rem;
+        margin-top: 1rem;
+        width: 7rem;
+    }
+}
+
+.form-container {
+    padding: 1rem 0.5rem; // vertical, horizontal
+    font-size: large;
+    display: flex;
+    label {
+        margin-top: 0.7rem;
+        display: block;
+        text-align: end;
+        padding: 0.14rem 1rem; // vertical, horizontal
+    }
+    input {
+        margin-top: 0.7rem;
+        display: block;
+        padding: 0.2rem 0.1rem; // vertical, horizontal
+    }
+}
+
+textarea {
+    width: 25rem;
+    height: 3.5rem;
+}
+
+.validators {
+    color: red;
+}

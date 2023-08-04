@@ -1,0 +1,43 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-style: groove;
+
+    td, th {
+        border: 0.1rem solid #6c6c6c;
+        padding: 0.5rem 0.8rem; // vertical, horizontal
+    }
+
+    tbody tr:nth-child(odd) {
+        background: #eee;
+    }
+}
+
+.row-width {
+    width: 3%;
+}
+
+th {
+    font-size: large;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    .part {
+        button {
+            float: right;
+            padding: 0.5rem 0.7rem; // vertical, horizontal
+        }
+    }
+}
+
+.nav-button {
+    width: 2rem;
+    padding: 0.1rem 0.1rem;
+    color: dodgerblue;
+    border: transparent;
+    background: transparent;
+    font-weight: 600;
+    font-size: 2.2rem;
+}
