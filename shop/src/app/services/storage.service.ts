@@ -157,7 +157,7 @@ export class StorageService implements OnInit {
       "street" : "Aleea Sudentilor"
     }).subscribe();
     alert("Order created!");
-    // update localStorage and page
+    // update localStorage and page (page is updated in the shopping cart component)
     localStorage.setItem(this.shoppingCartKey, '[]');
   }
 }

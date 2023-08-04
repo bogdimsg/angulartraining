@@ -1,26 +1,27 @@
-<div>
-    <!-- <div *ngIf="fillForm(product)"> -->
-        <form [formGroup]="productForm" id="product-edit">
-            <div class="form-container">
-                <div class="labels">
-                    <label for="name">Name: </label>
-                    <!-- <label for="category">Category: </label> -->
-                    <label for="image">Image URL: </label>
-                    <label for="price">Price: </label>
-                    <label for="description">Description: </label>
-                </div>
-                <div class="inputs">
-                    <input id="name" type="text" formControlName="name" form="product-edit">
-                    <!-- <input id="category" type="text" formControlName="category" form="product-edit"> -->
-                    <input id="image" type="text" formControlName="image" form="product-edit">
-                    <input id="price" type="text" formControlName="price" form="product-edit">
-                    <textarea id="description" formControlName="description" form="product-edit"></textarea>
-                </div>
+<div class="all-container">
+    <form [formGroup]="productForm" id="product-edit">
+        <div class="form-container">
+            <div class="labels">
+                <label for="name">Product name: </label>
+                <!-- <label for="category">Category: </label> -->
+                <label for="image">Image URL: </label>
+                <label for="price">Price: </label>
+                <!-- <label for="description">Description: </label> -->
             </div>
-            <div>
-                <button type="reset">CANCEL</button>
+            <div class="inputs">
+                <input id="name" type="text" formControlName="name" form="product-edit">
+                <input id="image" type="text" formControlName="image" form="product-edit">
+                <input id="price" type="text" formControlName="price" form="product-edit">
+                <!-- <input id="category" type="text" formControlName="category" form="product-edit"> -->
             </div>
-        </form>
-        <button type="submit" (click)="onSubmit(product)" [disabled]="!productForm.valid" style="background-color: dodgerblue;color: white">SAVE</button>
-    <!-- </div> -->
+        </div>
+        <textarea id="description" formControlName="description" form="product-edit"></textarea>
+        <!-- <div class="validators">
+            <p *ngIf="formControl.name.invalid && (name.dirty || name.touched)">* Product name must be at least <b>3</b> characters long.</p>
+        </div> -->
+        <div>
+            <button type="reset">CANCEL</button>
+        </div>
+    </form>
+    <button type="submit" (click)="onSubmit(product)" [disabled]="!productForm.valid" style="background-color: dodgerblue;color: white">SAVE</button>
 </div>

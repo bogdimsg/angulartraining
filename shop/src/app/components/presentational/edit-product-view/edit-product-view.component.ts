@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Product } from 'src/app/modules/shared/types/product.types';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
@@ -17,23 +17,21 @@ export class EditProductViewComponent {
 
   ngOnInit() {
     this.productForm = new FormGroup({
-      name: new FormControl(this.product.productName),
+      name: new FormControl(this.product.productName, [
+        Validators.required,
+        Validators.minLength(3)
+      ]),
       // category: new FormControl(product.categoryName),
       image: new FormControl(this.product.productImageURL),
-      price: new FormControl(this.product.productPrice),
-      description: new FormControl(this.product.productDescription)
+      price: new FormControl(this.product.productPrice, [
+        Validators.required,
+        Validators.min(0.1)
+      ]),
+      description: new FormControl(this.product.productDescription, [
+        Validators.required,
+        Validators.minLength(5)
+      ])
     });
-  }
-
-  fillForm(product: Product): boolean {
-    this.productForm = new FormGroup({
-      name: new FormControl(product.productName),
-      // category: new FormControl(product.categoryName),
-      image: new FormControl(product.productImageURL),
-      price: new FormControl(product.productPrice),
-      description: new FormControl(product.productDescription)
-    });
-    return true;
   }
 
   onSubmit(product: Product): void {

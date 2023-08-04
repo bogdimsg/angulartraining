@@ -26,8 +26,4 @@ export class EditProductComponent {
   onSubmit(prod: Product): void {
     this.storage.updateProductFromDB(prod);
   }
-
-  update(): void {
-    ;
-  }
 }
