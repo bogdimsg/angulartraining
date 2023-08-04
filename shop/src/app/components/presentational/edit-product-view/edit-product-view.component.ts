@@ -21,7 +21,6 @@ export class EditProductViewComponent {
         Validators.required,
         Validators.minLength(3)
       ]),
-      // category: new FormControl(product.categoryName),
       image: new FormControl(this.product.productImageURL),
       price: new FormControl(this.product.productPrice, [
         Validators.required,
@@ -42,7 +41,6 @@ export class EditProductViewComponent {
     prod.productPrice = this.productForm.value.price;
     prod.productDescription = this.productForm.value.description;
 
-    // this.productForm.reset();
     this.submit.emit(prod);
   }
 }

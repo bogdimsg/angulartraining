@@ -18,9 +18,6 @@ export class StorageService implements OnInit {
   
 
   ngOnInit(): void {
-    // if (!localStorage.getItem(this.shoppingCartKey)) {
-    //   localStorage.setItem(this.shoppingCartKey, '[]'); // ?
-    // }
     this.getProducts();
   }
 
@@ -82,20 +79,6 @@ export class StorageService implements OnInit {
       parsed = Array(temp);
       localStorage.setItem(this.shoppingCartKey, JSON.stringify(parsed));
     }
-    // check if this is needed, delete after
-    // since we made changes to the cart, we update the variable so that we don't have to keep getting it from localStorage (as it would be expensive)
-    // this.getProducts();
-  }
-
-  deleteProductFromCart(product: Product): void {
-    let parsed: StorageType[] = JSON.parse(localStorage.getItem(this.shoppingCartKey) || '[]') as StorageType[];
-    for (let i: number = 0; i < parsed.length; i++) {
-      if (product.productID === parsed[i].id) {
-        // delete 1 element from index i (so just index i, the product we want to delete)
-        parsed.splice(i, 1);
-      }
-    }
-    localStorage.setItem(this.shoppingCartKey, JSON.stringify(parsed));
     // check if this is needed, delete after
     // since we made changes to the cart, we update the variable so that we don't have to keep getting it from localStorage (as it would be expensive)
     // this.getProducts();

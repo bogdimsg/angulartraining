@@ -14,7 +14,6 @@ const routes: Routes = [
   { path: 'product-details/:id', component: ProductsDetailsComponent, title: 'Product Details' },
   { path: 'shopping-cart', component: ShoppingCartDetailsComponent, title: 'Cart' },
   { path: 'add-product', component: AddProductComponent, title: 'Add Product' },
-  { path: 'edit-product/:id', component: EditProductComponent, title: 'Edit Product' },
   { path: 'product-details/:id/edit-product', component: EditProductComponent, title: 'Edit Product' },
   { path: '**', component: BadRouteComponent, title: 'Page Not Found' }
 ];
