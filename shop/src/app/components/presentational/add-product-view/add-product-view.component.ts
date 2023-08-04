@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AddProduct } from 'src/app/modules/shared/types/add-product.types';
-import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-add-product-view',
@@ -12,7 +11,7 @@ export class AddProductViewComponent {
   @Output() submit = new EventEmitter();
   productForm!: FormGroup;
 
-  constructor (private storage: StorageService) {}
+  constructor () {}
 
   ngOnInit() {
     this.productForm = new FormGroup({
@@ -20,7 +19,6 @@ export class AddProductViewComponent {
         Validators.required,
         Validators.minLength(3)
       ]),
-      category: new FormControl(''),
       image: new FormControl(''),
       price: new FormControl('', [
         Validators.required,
@@ -36,11 +34,10 @@ export class AddProductViewComponent {
   onSubmit(): void {
     // making the product
     let prod: AddProduct = {
-      categoryDescription: 'new kitchen supplies',
+      categoryID: 'aaeff640-36d0-49c5-8a3e-52d96426f945',
       productWeight: 3,
       productName: this.productForm.value.name,
       productImageURL: this.productForm.value.image,
-      categoryName: this.productForm.value.category,
       productPrice: this.productForm.value.price,
       productDescription: this.productForm.value.description
     };

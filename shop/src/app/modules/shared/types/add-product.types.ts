@@ -4,6 +4,5 @@ export interface AddProduct {
     productPrice: number,
     productWeight: number,
     productImageURL: string,
-    categoryName: string,
-    categoryDescription: string
+    categoryID: string,
 }
