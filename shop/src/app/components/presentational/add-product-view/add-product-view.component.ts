@@ -11,8 +11,6 @@ export class AddProductViewComponent {
   @Output() submit = new EventEmitter();
   productForm!: FormGroup;
 
-  constructor () {}
-
   ngOnInit() {
     this.productForm = new FormGroup({
       name: new FormControl('', [
@@ -42,7 +40,7 @@ export class AddProductViewComponent {
       productDescription: this.productForm.value.description
     };
 
-    // this.productForm.reset();
+    this.productForm.reset();
     this.submit.emit(prod);
   }
 }
