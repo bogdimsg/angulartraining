@@ -9,13 +9,13 @@
                 <!-- <label for="description">Description: </label> -->
             </div>
             <div class="inputs">
-                <input id="name" type="text" formControlName="name" form="product-edit">
-                <input id="image" type="text" formControlName="image" form="product-edit">
-                <input id="price" type="text" formControlName="price" form="product-edit">
-                <!-- <input id="category" type="text" formControlName="category" form="product-edit"> -->
+                <input id="name" type="text" formControlName="name" form="product-edit" placeholder="Name">
+                <input id="image" type="url" formControlName="image" form="product-edit" placeholder="shop.com/images/picture.png">
+                <input id="price" type="number" formControlName="price" form="product-edit" placeholder="Price RON">
+                <!-- <input id="category" type="text" formControlName="category" form="product-edit" placeholder="Product category name"> -->
             </div>
         </div>
-        <textarea id="description" formControlName="description" form="product-edit"></textarea>
+        <textarea id="description" formControlName="description" form="product-edit" placeholder="Product description"></textarea>
         <!-- <div class="validators">
             <p *ngIf="formControl.name.invalid && (name.dirty || name.touched)">* Product name must be at least <b>3</b> characters long.</p>
         </div> -->

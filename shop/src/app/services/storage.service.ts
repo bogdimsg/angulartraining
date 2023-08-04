@@ -4,6 +4,7 @@ import { Product } from '../modules/shared/types/product.types';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { StorageType } from '../modules/shared/types/storage.types';
+import { AddProduct } from '../modules/shared/types/add-product.types';
 
 @Injectable({
   providedIn: 'root'
@@ -159,5 +160,9 @@ export class StorageService implements OnInit {
     alert("Order created!");
     // update localStorage and page (page is updated in the shopping cart component)
     localStorage.setItem(this.shoppingCartKey, '[]');
+  }
+
+  createProduct(prod: AddProduct): void {
+    this.http.post(environment.apiUrl + '/products', prod).subscribe();
   }
 }
