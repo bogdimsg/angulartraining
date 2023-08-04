@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { getProductsDetailsMock } from 'src/app/mocks/products.mocks';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Product } from 'src/app/modules/shared/types/product.types';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-products-list',
@@ -7,6 +9,11 @@ import { getProductsDetailsMock } from 'src/app/mocks/products.mocks';
   styleUrls: ['./products-list.component.scss']
 })
 
-export class ProductsListComponent {
-  productList = getProductsDetailsMock(10);
+export class ProductsListComponent implements OnInit {
+  constructor (private storage: StorageService) {}
+  productList: Observable<Product[]> = this.storage.getProducts();
+
+  ngOnInit(): void {
+    this.productList = this.storage.getProducts();
+  }
 }

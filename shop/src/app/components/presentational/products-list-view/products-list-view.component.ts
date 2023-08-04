@@ -1,8 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { ProductDetails } from 'src/app/modules/shared/types/product-details.types';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { getProductDetailsMock } from 'src/app/mocks/products.mocks';
 import { Observable } from 'rxjs';
+import { Product } from 'src/app/modules/shared/types/product.types';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-products-list-view',
@@ -11,18 +10,11 @@ import { Observable } from 'rxjs';
 })
 
 export class ProductsListViewComponent {
-  @Input() productList: ProductDetails[] | undefined;
+  @Input() productList: Observable<Product[]> | undefined;
 
-  products: Observable<ProductDetails>;
+  constructor (private storage: StorageService) {}
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
-
-  ngOnInit() {
-    const productID = this.route.snapshot.paramMap.get('id');
-    this.products = getProductDetailsMock("product" + productID);
+  addItemToCart(product: Product) {
+    this.storage.addProductToCart(product);
   }
-}
-
-export function addItemToCart(product: ProductDetails){
-  ;
 }

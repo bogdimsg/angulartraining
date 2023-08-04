@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { ProductDetails } from 'src/app/modules/shared/types/product-details.types';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Product } from 'src/app/modules/shared/types/product.types';
 
 @Component({
   selector: 'app-products-details-view',
@@ -7,5 +8,10 @@ import { ProductDetails } from 'src/app/modules/shared/types/product-details.typ
   styleUrls: ['./products-details-view.component.scss']
 })
 export class ProductsDetailsViewComponent {
-  @Input() product: ProductDetails | undefined;
+  @Input() product: Observable<Product> | undefined;
+  @Output() onDeletion = new EventEmitter();
+
+  handleDeletionFromInventory(product: Product): void {
+    this.onDeletion.emit(product);
+  }
 }

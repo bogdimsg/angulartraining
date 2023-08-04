@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Product } from '../types/product.types';
 
 @Component({
   selector: 'app-icon-button',
@@ -9,4 +10,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./icon-button.component.scss']
 })
 export class IconButtonComponent {
+  @Input() product: Product | undefined;
+  @Output() onClick = new EventEmitter();
+
+  handleClick(): void {
+    this.onClick.emit();
+  }
 }
